@@ -1,0 +1,17 @@
+FROM php:8.3-fpm
+
+# Install dependencies
+RUN apt-get update && apt-get install -y libzip-dev zip && docker-php-ext-install zip
+
+# Install webserver
+RUN apt-get install -y lighttpd
+
+# Configure webserver
+COPY www.conf /etc/lighttpd/conf.d/
+COPY www-lighttpd.conf /etc/lighttpd/lighttpd.conf
+
+# Expose port
+EXPOSE 80
+
+# Start webserver
+CMD ["lighttpd"]
