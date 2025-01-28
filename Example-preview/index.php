@@ -11,7 +11,7 @@
             transition: opacity 0.5s ease-in-out;
         }
         .toast.show {
-            animation: fadeIn 0.5s ease-in-out forwards;
+            animation: fadeIn 0.5   s ease-in-out forwards;
         }
         .toast.hide {
             animation: fadeOut 0.5s ease-in-out forwards;
